@@ -1,0 +1,110 @@
+@import url("../../layui/css/layui.css");
+
+:root {
+    --color: #1e9fff;
+    --second-color: #b71616;
+    --toolHeight: 26px;
+}
+
+.layui-container {
+    margin: 0px;
+    background: linear-gradient(to right, rgba(214, 233, 253, 0.5), rgba(213, 255, 247, 0.5), rgba(209, 248, 247, 0.5));
+    width: calc(100vw - 10px);
+}
+
+/* 修改滚动条样式 */
+.layui-container {
+
+    /* 滚动条 */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 滚动槽 */
+    ::-webkit-scrollbar-track {
+        border-radius: 8px !important;
+        background: rgba(0, 0, 0, 0.05) !important;
+        -webkit-border-radius: 8px !important;
+        -moz-border-radius: 8px !important;
+        -ms-border-radius: 8px !important;
+        -o-border-radius: 8px !important;
+    }
+
+    /* 滚动条滑块 */
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px !important;
+        background: var(--color) !important;
+        -webkit-border-radius: 10px !important;
+        -moz-border-radius: 10px !important;
+        -ms-border-radius: 10px !important;
+        -o-border-radius: 10px !important;
+    }
+}
+
+/* 滚动条 */
+.layui-container::-webkit-scrollbar {
+    display: none;
+}
+
+.layui-form {
+    .requiredTag {
+        color: var(--second-color)
+    }
+
+    .layui-form-item {
+        height: var(--toolHeight);
+        line-height: var(--toolHeight);
+        margin-bottom: 15px;
+
+        .layui-form-label {
+            width: 20%;
+        }
+
+        .layui-input-inline {
+            width: 70%;
+        }
+
+        .layui-input {
+            width: 100%;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+
+        .layui-input:focus {
+            border-color: var(--color) !important;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+
+        .layui-form-radio:hover>*,
+        .layui-form-radioed,
+        .layui-form-radioed>i {
+            color: var(--color) !important;
+        }
+
+        .layui-form-item-btns {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .layui-btn-primary {
+            border-width: 1px;
+            border-color: var(--color) !important;
+            color: var(--color) !important;
+            margin: 15px;
+        }
+
+        .layui-btn-primary:hover {
+            border-color: var(--color) !important;
+        }
+
+    }
+}

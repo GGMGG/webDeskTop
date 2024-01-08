@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../plugins/index/css/index.css" />
+  </head>
+
+  <body class="layui-container">
+    <form class="layui-form" lay-filter="configForm" name="configForm">
+      <fieldset class="layui-elem-field layui-field-title">
+        <legend>基础配置</legend>
+      </fieldset>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>应用名称</label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="title"
+            required
+            lay-verify="required"
+            placeholder="请输入应用名称"
+            autocomplete="off"
+            class="layui-input layui-input-color"
+            maxlength="24"
+            lay-affix="clear"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>应用地址</label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="url"
+            required
+            lay-verify="required|url"
+            placeholder="请输入应用地址"
+            autocomplete="off"
+            class="layui-input layui-input-color"
+            maxlength="512"
+            lay-affix="clear"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>自动全屏</label>
+        <div class="layui-input-inline">
+          <input type="radio" name="autoFullScreen" value="true" title="是" checked lay-filter="autoFullScreen-radio-filter" />
+          <input type="radio" name="autoFullScreen" value="false" title="否" lay-filter="autoFullScreen-radio-filter" />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>跳过配置</label>
+        <div class="layui-input-inline">
+          <input type="radio" name="skipSetting" value="true" title="是" checked lay-filter="skipSetting-radio-filter" />
+          <input type="radio" name="skipSetting" value="false" title="否" lay-filter="skipSetting-radio-filter" />
+        </div>
+      </div>
+      <fieldset class="layui-elem-field layui-field-title">
+        <legend>快捷键配置</legend>
+      </fieldset>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>打开设置</label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="openSetting"
+            required
+            lay-verify="required"
+            placeholder="请输入打开设置快捷键，例如Control+F1"
+            autocomplete="off"
+            class="layui-input layui-input-color"
+            maxlength="24"
+            lay-affix="clear"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>退出全屏</label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="exitFullScreen"
+            required
+            lay-verify="required"
+            placeholder="请输入退出全屏快捷键，例如ESC"
+            autocomplete="off"
+            class="layui-input layui-input-color"
+            maxlength="24"
+            lay-affix="clear"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>刷新</label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="reload"
+            required
+            lay-verify="required"
+            placeholder="请输入刷新快捷键，例如F5"
+            autocomplete="off"
+            class="layui-input layui-input-color"
+            maxlength="24"
+            lay-affix="clear"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>强制刷新</label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="reloadIgnoringCache"
+            required
+            lay-verify="required"
+            placeholder="请输入强制刷新快捷键，例如Control+F5"
+            autocomplete="off"
+            class="layui-input layui-input-color"
+            maxlength="24"
+            lay-affix="clear"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"><span class="requiredTag">*&nbsp;&nbsp;</span>开发者工具</label>
+        <div class="layui-input-inline">
+          <input
+            type="text"
+            name="devTool"
+            required
+            lay-verify="required"
+            placeholder="请输入开发者工具快捷键，例如Control+F12"
+            autocomplete="off"
+            class="layui-input layui-input-color"
+            maxlength="24"
+            lay-affix="clear"
+          />
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-inline layui-form-item-btns">
+          <button type="submit" class="layui-btn layui-btn-radius layui-btn-primary" lay-submit lay-filter="form-save">保存</button>
+          <button class="layui-btn layui-btn-radius layui-btn-primary" id="resetBtn">重置</button>
+          <button class="layui-btn layui-btn-radius layui-btn-primary" id="relaunchBtn">重启</button>
+          <button class="layui-btn layui-btn-radius layui-btn-primary" id="openWebWindowsBtn">打开web窗口</button>
+        </div>
+      </div>
+    </form>
+  </body>
+  <script src="../plugins/render/render.js"></script>
+  <script src="../plugins/layui/layui.js"></script>
+  <script src="../plugins/index/index.js"></script>
+</html>
